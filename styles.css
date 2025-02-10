@@ -1,0 +1,326 @@
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease; /* Added transition for smoother animations */
+}
+
+body {
+    background-color: #121212;
+    color: white;
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #1f1f1f;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.nav-links li i {
+    margin-right: 10px;
+}
+
+.nav-links li:hover {
+    background-color: #333;
+    border-radius: 5px;
+    transform: scale(1.02); /* Added scale effect on hover */
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease; /* Added transition for input focus */
+}
+
+.search-bar input:focus {
+    border-bottom: 2px solid #ff6f61; /* Added focus style */
+}
+
+.search-bar i {
+    color: #999;
+    margin-left: 10px;
+}
+
+/* Playlist Grid */
+.playlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.playlist-card {
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.2s ease, background-color 0.3s ease; /* Added transition for background color */
+}
+
+.playlist-card:hover {
+    background-color: #333; /* Change background color on hover */
+}
+
+.playlist-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.playlist-card:hover {
+    transform: scale(1.05);
+}
+
+/* Music Player */
+.music-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.track-info {
+    display: flex;
+    align-items: center;
+}
+
+.track-info img {
+    width: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.player-controls i {
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.player-controls i:hover {
+    color: #ff6f61;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 5px;
+    background-color: #555;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 20px;
+}
+
+.progress {
+    height: 100%;
+    width: 30%;
+    background-color: #ff6f61;
+}
+
+/* Volume Control */
+.volume-control {
+    display: flex;
+    align-items: center;
+}
+
+.volume-control i {
+    margin-right: 5px;
+}
+
+/* Equalizer Animation */
+.equalizer {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.equalizer span {
+    width: 5px;
+    height: 10px;
+    background-color: #ff6f61;
+    display: block;
+    animation: bounce 1s infinite alternate ease-in-out;
+}
+
+.equalizer span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.equalizer span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.equalizer span:nth-child(4) {
+    animation-delay: 0.6s;
+}
+.equalizer span:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+@keyframes bounce {
+    from {
+        height: 10px;
+    }
+    to {
+        height: 20px;
+    }
+}
+
+/* Lyrics Section */
+.lyrics-section {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    max-width: 600px;
+    color: #fff;
+}
+
+.lyrics-section h3 {
+    margin-bottom: 10px;
+}
+
+.lyrics-section button {
+    padding: 8px 16px;
+    margin-bottom: 15px;
+    border: none;
+    background-color: #ff6f61;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Added transition for button hover */
+}
+
+.lyrics-section button:hover {
+    background-color: #e85c50; /* Change background color on hover */
+}
+
+.lyrics-section button:hover {
+    background-color: #e85c50;
+}
+
+.lyrics-section p {
+    white-space: pre-wrap; /* Maintains formatting of the lyrics */
+    line-height: 1.5;
+}
+
+/* Playlist Creation Section */
+.playlist-creation-section {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    width: 400px;
+    margin: 20px auto;
+}
+
+.playlist-creation-section input,
+.playlist-creation-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s ease; /* Added transition for input focus */
+}
+
+.playlist-creation-section input:focus,
+.playlist-creation-section textarea:focus {
+    background-color: #444; /* Change background color on focus */
+}
+
+.playlist-creation-section button {
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.playlist-creation-section button:hover {
+    background-color: #e85c50;
+}
+
+/* Playlists Container */
+.user-playlists-section {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    margin: 20px auto;
+}
+
+.playlists-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.playlist-card {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.playlist-card:hover {
+    transform: scale(1.05);
+}
+
+.playlist-card h4 {
+    font-size: 18px;
+    color: white;
+}
